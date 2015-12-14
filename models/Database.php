@@ -11,6 +11,7 @@
  *
  * @author Drago
  */
+require_once('config.php');
 Class Database {
     private static $instance = null;
     private $db_connection,
@@ -23,10 +24,6 @@ Class Database {
     private function __construct() {
 
         //database Constants
-        define("DB_SERVER", "localhost");
-        define("DB_USER", "hristovd_drago");
-        define("DB_PASS", "quiz1");
-        define("DB_NAME", "hristovd_quiz");
 
         $this->open_connection();
     }
