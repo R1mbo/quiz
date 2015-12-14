@@ -5,11 +5,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 require_once '../models/Loader.php';
-\quiz\models\Loader::registerNamespace('quiz\models', 'd:\xampp\htdocs\quiz\models\\');
-\quiz\models\Loader::registerAutoLoad();
-echo "start";
 
-$db=\quiz\models\Database::getInstance();
+$db = Database::getinstance();
 
-//var_dump($db);
+$db->get('questions', array());
+$result = $db->result();
+
+$question = $result->question;
+$id = $result->id;
+include 'html/quiz.php';

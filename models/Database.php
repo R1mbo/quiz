@@ -11,7 +11,6 @@
  *
  * @author Drago
  */
-namespace quiz\models;
 Class Database {
     private static $instance = null;
     private $db_connection,
@@ -24,18 +23,18 @@ Class Database {
     private function __construct() {
 
         //database Constants
-        define("DB_SERVER", "127.0.0.1");
-        define("DB_USER", "root");
-        define("DB_PASS", "");
-        define("DB_NAME", "quiz");
+        define("DB_SERVER", "localhost");
+        define("DB_USER", "hristovd_drago");
+        define("DB_PASS", "quiz1");
+        define("DB_NAME", "hristovd_quiz");
 
         $this->open_connection();
     }
 
         public function open_connection() {
             try {
-                $this->db_connection = new \PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
-                $this->db_connection->setAttribute(\PDO::ATTR_EMULATE_PREPARES, false);
+                $this->db_connection = new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
+                $this->db_connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
             } catch (PDOException $e) {
                 die($e->getMessage());
@@ -73,9 +72,14 @@ Class Database {
                     }
                 }
                 if ($this->_query->execute()) {
-                    $this->_result = $this->_query->fetch(PDO::FETCH_OBJ);
-                    $this->_results = $this->_query->fetchAll(PDO::FETCH_OBJ);
                     $this->_count = $this->_query->rowCount();
+
+                    if($this->_count === 1){
+		    $this->_result = $this->_query->fetch(PDO::FETCH_OBJ);
+                    }
+                    if($this->_count > 1){
+                    $this->_results = $this->_query->fetchAll(PDO::FETCH_OBJ);
+                    }
 
                 } else {
                     $this->_error = true;

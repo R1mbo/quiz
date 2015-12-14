@@ -1,0 +1,121 @@
+[14-Dec-2015 05:32:41 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: ' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(9): quiz\models\Loader::registerNamespace('quiz\\models', 'd:\\xampp\\htdocs...')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 05:44:08 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: ' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(9): quiz\models\Loader::registerNamespace('quiz\\models', 'd:\\xampp\\htdocs...')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 05:51:43 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: ' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(10): quiz\models\Loader::registerNamespace('quiz\\models', 'd:\\xampp\\htdocs...')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 05:57:03 America/Chicago] PHP Parse error:  syntax error, unexpected '$_SERVER' (T_VARIABLE) in /home1/hristovd/public_html/quiz/public/index.php on line 8
+[14-Dec-2015 05:57:39 America/Chicago] PHP Parse error:  syntax error, unexpected '$_SERVER' (T_VARIABLE) in /home1/hristovd/public_html/quiz/public/index.php on line 8
+[14-Dec-2015 05:59:09 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: ' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(10): quiz\models\Loader::registerNamespace('quiz\\models', '192.254.234.94/...')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 05:59:59 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: ' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(10): quiz\models\Loader::registerNamespace('quiz\\models', '/~hristovd/quiz...')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 06:06:27 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: ' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(10): quiz\models\Loader::registerNamespace('quiz\\models', '/~hristovd/quiz...')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 06:07:13 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: ' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(10): quiz\models\Loader::registerNamespace('quiz\\models', '/~hristovd/quiz...')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 07:25:18 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: ' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(10): quiz\models\Loader::registerNamespace('quiz\\models', '/~hristovd/quiz...')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 07:26:18 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: ' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(10): quiz\models\Loader::registerNamespace('quiz\\models', '~/hristovd/quiz...')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 07:26:33 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: ' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(10): quiz\models\Loader::registerNamespace('quiz\\models', 'hristovd/quiz/')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 07:26:54 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: ' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(10): quiz\models\Loader::registerNamespace('quiz\\models', '/hristovd/quiz/')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 07:27:39 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: ' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(10): quiz\models\Loader::registerNamespace('quiz\\models', '/hristovd/quiz/')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 07:28:52 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: /usr/local/apache/htdocs' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(13): quiz\models\Loader::registerNamespace('quiz\\models', '/usr/local/apac...')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 07:29:25 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: ' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(13): quiz\models\Loader::registerNamespace('quiz\\models', '/usr/local/apac...')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 07:30:32 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: ' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(13): quiz\models\Loader::registerNamespace('quiz\\models', 'home1/hristovd/...')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 07:31:10 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: ' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(13): quiz\models\Loader::registerNamespace('quiz\\models', 'home1/hristovd/...')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 07:31:13 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: ' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(13): quiz\models\Loader::registerNamespace('quiz\\models', 'home1/hristovd/...')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 07:31:52 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: ' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(13): quiz\models\Loader::registerNamespace('quiz\\models', 'home1/hristovd/...')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 07:32:10 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: ' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(13): quiz\models\Loader::registerNamespace('quiz\\models', 'home1/hristovd/...')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 07:32:12 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Namespace directory read error: ' in /home1/hristovd/public_html/quiz/models/Loader.php:63
+Stack trace:
+#0 /home1/hristovd/public_html/quiz/public/index.php(13): quiz\models\Loader::registerNamespace('quiz\\models', 'home1/hristovd/...')
+#1 {main}
+  thrown in /home1/hristovd/public_html/quiz/models/Loader.php on line 63
+[14-Dec-2015 07:58:56 America/Chicago] PHP Warning:  include(functions.php): failed to open stream: No such file or directory in /home1/hristovd/public_html/quiz/models/Loader.php on line 16
+[14-Dec-2015 07:58:56 America/Chicago] PHP Warning:  include(functions.php): failed to open stream: No such file or directory in /home1/hristovd/public_html/quiz/models/Loader.php on line 16
+[14-Dec-2015 07:58:56 America/Chicago] PHP Warning:  include(): Failed opening 'functions.php' for inclusion (include_path='.:/opt/php54/lib/php') in /home1/hristovd/public_html/quiz/models/Loader.php on line 16
+[14-Dec-2015 09:01:29 America/Chicago] PHP Warning:  require_once(models/Database.php): failed to open stream: No such file or directory in /home1/hristovd/public_html/quiz/models/Loader.php on line 17
+[14-Dec-2015 09:01:30 America/Chicago] PHP Fatal error:  require_once(): Failed opening required 'models/Database.php' (include_path='.:/opt/php54/lib/php') in /home1/hristovd/public_html/quiz/models/Loader.php on line 17
+[14-Dec-2015 09:11:32 America/Chicago] PHP Warning:  Missing argument 2 for Database::get(), called in /home1/hristovd/public_html/quiz/public/index.php on line 13 and defined in /home1/hristovd/public_html/quiz/models/Database.php on line 139
+[14-Dec-2015 09:11:32 America/Chicago] PHP Catchable fatal error:  Argument 3 passed to Database::action() must be of the type array, null given, called in /home1/hristovd/public_html/quiz/models/Database.php on line 140 and defined in /home1/hristovd/public_html/quiz/models/Database.php on line 90
+[14-Dec-2015 09:12:30 America/Chicago] PHP Warning:  include(html/quiz.php): failed to open stream: No such file or directory in /home1/hristovd/public_html/quiz/public/index.php on line 17
+[14-Dec-2015 09:12:30 America/Chicago] PHP Warning:  include(html/quiz.php): failed to open stream: No such file or directory in /home1/hristovd/public_html/quiz/public/index.php on line 17
+[14-Dec-2015 09:12:30 America/Chicago] PHP Warning:  include(): Failed opening 'html/quiz.php' for inclusion (include_path='.:/opt/php54/lib/php') in /home1/hristovd/public_html/quiz/public/index.php on line 17
+[14-Dec-2015 09:56:10 America/Chicago] PHP Parse error:  syntax error, unexpected ';' in /home1/hristovd/public_html/quiz/public/html/quiz.php on line 2
+[14-Dec-2015 10:05:31 America/Chicago] PHP Parse error:  syntax error, unexpected '`' in /home1/hristovd/public_html/quiz/public/html/quiz.php on line 12
+[14-Dec-2015 10:21:29 America/Chicago] PHP Fatal error:  Function name must be a string in /home1/hristovd/public_html/quiz/public/index.php on line 15
+[14-Dec-2015 10:37:05 America/Chicago] PHP Parse error:  syntax error, unexpected '!', expecting '(' in /home1/hristovd/public_html/quiz/models/Database.php on line 77
+[14-Dec-2015 10:37:24 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home1/hristovd/public_html/quiz/public/html/quiz.php on line 15
+[14-Dec-2015 10:46:35 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home1/hristovd/public_html/quiz/public/html/quiz.php on line 15
+[14-Dec-2015 11:02:56 America/Chicago] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /home1/hristovd/public_html/quiz/models/Database.php on line 78
+[14-Dec-2015 11:03:32 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home1/hristovd/public_html/quiz/public/html/quiz.php on line 15
+[14-Dec-2015 11:05:52 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home1/hristovd/public_html/quiz/public/html/quiz.php on line 15
