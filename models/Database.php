@@ -11,7 +11,6 @@
  *
  * @author Drago
  */
-require_once('config.php');
 Class Database {
     private static $instance = null;
     private $db_connection,
@@ -25,6 +24,7 @@ Class Database {
 
         //database Constants
 
+        require_once('config.php');
         $this->open_connection();
     }
 
