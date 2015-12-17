@@ -5,14 +5,14 @@ $db = Database::getinstance();
 $answer = $_POST['answer'];
 $count = $_POST['count'];
 
-Registry::setData('count', $count);
-
 $db->get('answers',array('answer','=',"{$answer}"));
-$results = $db->result();
+$result = $db->result();
 
-Registry::setData('user_flag', $result->flag);
-Registry::setData('question_id', $result->id);
-Registry::setData('usr_answer', $answer);
+
+$_SESSION['count'] = $count;
+$_SESSION['user_flag'] = $result->flag;
+$_SESSION['question_id'] = $result->question_id;
+$_SESSION['usr_answer'] = $answer;
 
 header('location:index.php');
 exit;

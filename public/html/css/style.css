@@ -14,4 +14,19 @@ background:darkblue;
 color:white;
 }
 
+.wrong {
+background:red;
+color:white;
+}
 
+.correct {
+background:green;
+color:white;
+}
+
+.disabled {
+background:white;
+border:2px solid #ccc;
+color:#ccc;
+font-weight:bold;
+}
