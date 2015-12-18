@@ -253,3 +253,27 @@ Stack trace:
 [17-Dec-2015 10:33:45 America/Chicago] PHP Notice:  Undefined index: question_id in /home1/hristovd/public_html/quiz/public/index.php on line 117
 [17-Dec-2015 10:38:27 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home1/hristovd/public_html/quiz/public/index.php on line 116
 [17-Dec-2015 10:56:22 America/Chicago] PHP Parse error:  syntax error, unexpected '$_SESSION' (T_VARIABLE), expecting '(' in /home1/hristovd/public_html/quiz/public/index.php on line 96
+[18-Dec-2015 03:24:11 America/Chicago] PHP Notice:  Trying to get property of non-object in /home1/hristovd/public_html/quiz/public/index.php on line 25
+[18-Dec-2015 03:24:11 America/Chicago] PHP Notice:  Trying to get property of non-object in /home1/hristovd/public_html/quiz/public/index.php on line 26
+[18-Dec-2015 03:24:11 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home1/hristovd/public_html/quiz/public/index.php on line 67
+[18-Dec-2015 03:24:34 America/Chicago] PHP Notice:  Trying to get property of non-object in /home1/hristovd/public_html/quiz/public/index.php on line 25
+[18-Dec-2015 03:24:34 America/Chicago] PHP Notice:  Trying to get property of non-object in /home1/hristovd/public_html/quiz/public/index.php on line 26
+[18-Dec-2015 03:24:34 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home1/hristovd/public_html/quiz/public/index.php on line 67
+[18-Dec-2015 03:27:54 America/Chicago] PHP Notice:  Undefined variable: count in /home1/hristovd/public_html/quiz/public/index.php on line 117
+[18-Dec-2015 03:27:59 America/Chicago] PHP Notice:  Undefined variable: count in /home1/hristovd/public_html/quiz/public/index.php on line 117
+[18-Dec-2015 03:28:01 America/Chicago] PHP Notice:  Undefined variable: count in /home1/hristovd/public_html/quiz/public/index.php on line 117
+[18-Dec-2015 03:28:03 America/Chicago] PHP Notice:  Undefined variable: count in /home1/hristovd/public_html/quiz/public/index.php on line 117
+[18-Dec-2015 03:28:04 America/Chicago] PHP Notice:  Undefined variable: count in /home1/hristovd/public_html/quiz/public/index.php on line 117
+[18-Dec-2015 03:38:27 America/Chicago] PHP Notice:  Undefined variable: count in /home1/hristovd/public_html/quiz/public/index.php on line 118
+[18-Dec-2015 03:38:30 America/Chicago] PHP Notice:  Undefined variable: count in /home1/hristovd/public_html/quiz/public/index.php on line 118
+[18-Dec-2015 03:38:32 America/Chicago] PHP Notice:  Undefined variable: count in /home1/hristovd/public_html/quiz/public/index.php on line 118
+[18-Dec-2015 03:39:57 America/Chicago] PHP Notice:  Undefined index: count in /home1/hristovd/public_html/quiz/public/index.php on line 118
+[18-Dec-2015 03:39:57 America/Chicago] PHP Notice:  Undefined index: count in /home1/hristovd/public_html/quiz/public/index.php on line 60
+[18-Dec-2015 03:41:07 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home1/hristovd/public_html/quiz/public/index.php on line 59
+[18-Dec-2015 03:41:26 America/Chicago] PHP Notice:  Undefined index: count in /home1/hristovd/public_html/quiz/public/index.php on line 117
+[18-Dec-2015 03:42:40 America/Chicago] PHP Notice:  Undefined index: count in /home1/hristovd/public_html/quiz/public/index.php on line 117
+[18-Dec-2015 03:43:20 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home1/hristovd/public_html/quiz/public/index.php on line 59
+[18-Dec-2015 03:44:32 America/Chicago] PHP Notice:  Undefined index: count in /home1/hristovd/public_html/quiz/public/index.php on line 121
+[18-Dec-2015 03:51:20 America/Chicago] PHP Notice:  Undefined index: count in /home1/hristovd/public_html/quiz/public/index.php on line 124
+[18-Dec-2015 04:13:44 America/Chicago] PHP Parse error:  syntax error, unexpected 'array' (T_ARRAY) in /home1/hristovd/public_html/quiz/public/answer.php on line 9
+[18-Dec-2015 04:23:15 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/hristovd/public_html/quiz/public/answer.php:8) in /home1/hristovd/public_html/quiz/public/answer.php on line 17

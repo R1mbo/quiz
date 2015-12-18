@@ -11,18 +11,17 @@ ini_set('display_errors', 1);
 require_once '../models/Loader.php';
 
 function get_question($id='', $count=0){
+	//Counts how many times the function
+	//was called.
 	$count++;
 
 	$db = Database::getinstance();
 
-	$numbers = range(1,5);
-	shuffle($numbers);
-
 	if($id == ''){
-		$id = array_slice($numbers, 4);
+		$id = mt_rand(1, 5);
 	}
 
-	$db->get('questions', array('id','=',$id[0]));
+	$db->get('questions', array('id','=',$id));
 	$result = $db->result(); 
 
 	$question = $result->question;
@@ -59,9 +58,15 @@ function quiz($id = ''){
 			$usr_flag = $_SESSION['user_flag'];
 		}
 	}
+	//The counter is used to count how many questions
+	//the user has answered. If the var $count is not
+	//set the user has not answered any questions.
 	if(!isset($count)) $count ='';
+	if(isset($_SESSION['count'])) $count = $_SESSION['count'];
+	
 	//--------------------------
 	
+	echo $count;
 	//Render HTML. Question and Answer
 	$question = get_question($id, $count); 
 	$html = '<div class="question">'. $question["question"] .'</div>';
@@ -85,12 +90,12 @@ function quiz($id = ''){
 		$html .="<form action='answer.php' method='post'>
 			<button type='submit' class='answer ".$class."' name='answer' value='$answer->answer'>$answer->answer</button>
 			<input type='hidden' name='count' value=".$question['count']." />
+			<input type='hidden' name='question_id' value=".$question['id']." />
 			</form>";
 		//reset class to nil
 		//avoids appending a class to the next
 		//iteration of the loop.
 		$class = '';
-
 	}
 	//If id is not empty user has given an answer
 	//Set the btn state to enabled. User can requese
