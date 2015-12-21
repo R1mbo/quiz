@@ -16,7 +16,6 @@ Class Database {
 	private $db_connection,
 		$_query,
 		$_error = false,
-		$_results,
 		$_result,
 		$_count = 0;
 
@@ -76,7 +75,7 @@ Class Database {
 					$this->_result = $this->_query->fetch(PDO::FETCH_OBJ);
 				}
 				if($this->_count > 1){
-					$this->_results = $this->_query->fetchAll(PDO::FETCH_OBJ);
+					$this->_result = $this->_query->fetchAll(PDO::FETCH_OBJ);
 				}
 
 			} else {
@@ -228,10 +227,6 @@ Class Database {
 
 		}
 		return false;
-
-	}
-	public function results() {
-		return $this->_results;
 
 	}
 
