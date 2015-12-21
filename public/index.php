@@ -8,18 +8,13 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require_once '../models/Loader.php';
 
-function get_question($id='', $count=0){
+function get_question($id, $count=0){
 	//Counts how many times the function
 	//was called.
 	$count++;
 
 	$db = Database::getinstance();
-
-	if($id == ''){
-		$id = mt_rand(1, 5);
-	}
 
 	$db->get('questions', array('id','=',$id));
 	$result = $db->result(); 
@@ -37,101 +32,128 @@ function get_answers($question_id){
 	$db = Database::getinstance();
 
 	$db->get('answers', array('question_id', '=', $question_id));
-	$answers = $db->results();
+	$answers = $db->result();
 
 	return $answers;
 }
 
-function quiz($id = ''){
-	//Set default variable values
-	$class = '';
-	$btn_state = 'disabled';
+function validate_question($session_id){
+	$db = Database::getinstance();
+	$db->get('sessions',  array('session_id', '=', $session_id));
+	$results = $db->result();
+	$count = count($results);
 
-	$session_keys = array('usr_answer', 'user_flag', 'question_id');
-	foreach($session_keys as $key){
-		if(!isset($_SESSION[$key])){
-			$usr_answer = '';
-			$usr_flag = '';		
-		}else {
-
-			$usr_answer = $_SESSION['usr_answer'];
-			$usr_flag = $_SESSION['user_flag'];
-		}
+	if($count == 1) {
+		$question_id = $results->question_id;
+		$is_answered = $results->is_answered;
+	}elseif($count == 0){
+		$question_id = mt_rand(1, 5);
+		$db->insert('sessions', array('session_id'=> $session_id, 'question_id'=> $question_id, 'is_answered'=>0));
+		$result_set = array($question_id, 0, $count);
+		return $result_set;	
 	}
+	
+	$result_set = array($question_id, $is_answered, $count);
+	
+	return $result_set;
+}
+
+function quiz(){
+	$db = Database::getinstance();
+
 	//The counter is used to count how many questions
 	//the user has answered. If the var $count is not
 	//set the user has not answered any questions.
-	if(!isset($count)) $count ='';
+	if(!isset($count)) $count = 0;
 	if(isset($_SESSION['count'])) $count = $_SESSION['count'];
-	
-	//--------------------------
-	
-	echo $count;
-	//Render HTML. Question and Answer
-	$question = get_question($id, $count); 
-	$html = '<div class="question">'. $question["question"] .'</div>';
 
-	$answers = get_answers($question['id']);
+	echo $count;
+	//Set default variable values. Variables used for html and
+	//quiz logic
+
+	$allowed_questions = 3;
+	$class = '';
+	$btn_state = 'disabled';
+	$answer_state ='';
+	$session_id = session_id();
+	!isset($_SESSION['next_question']) ? $next_question = 0 : $next_question = $_SESSION['next_question'];
+	
+	if($next_question == 0){	
+		$validate = validate_question($session_id);
+		$question_id = $validate[0];
+ 		$is_answered = $validate[1];
+        	$exists      = $validate[2];
+	}
+
+	if($next_question == 1){
+		$question_id = mt_rand(1,5);	
+		$db->update('sessions', array('question_id'=> $question_id, 'is_answered'=>0), array('session_id'=>$session_id));
+		unset($_SESSION['next_question']);
+	}
+	//Used to identify which answer the user has given to a question and if it was the correct
+	//one or not.
+	!isset($_SESSION['usr_answer']) ? $usr_answer = '' : $usr_answer = $_SESSION['usr_answer'];
+	!isset($_SESSION['usr_flag'])   ? $usr_flag = ''   : $usr_flag = $_SESSION['usr_flag'];
+	if(!isset($is_answered)) $is_answered = 0;	
+
+	$question = get_question($question_id, $count); 
+
+	//Render HTML. Question and Answer
+	$html  = '<div class="container">';
+	$html .= '<div class="question">'. $question["question"] .'</div>';
+
+	$answers = get_answers($question_id);
 	foreach ($answers as $answer) {
-		//If the question id is not empty it means the id
-		//is being provided from the session. This means
-		//the user has answered a question and the quiz
-		//is fetching the same question from the database
-		//and then appends a color class to indicate if the
+		//If the value of is_answered is 1 it means the 
+		//question has been answered and the user  and the quiz
+		//is fetching the same question from the database.
+		//It then appends a color class to indicate if the
 		//given answer was correct or wrong.
-		if(!empty($id) && $usr_answer === $answer->answer){
+		if($is_answered == 1 && $usr_answer === $answer->answer){
 			if($usr_flag == 0) $class = 'wrong';
 			if($usr_flag == 1) $class = 'correct';
 
 		}
 		//Mark the correct answer with the correct css class
-		if(!empty($id) && $answer->flag == 1) $class = 'correct';
+		//Disable answer buttons if the question has been answered.
+		if($is_answered == 1 && $answer->flag == 1) $class = 'correct';
+		if($is_answered == 1) $answer_state = 'disabled';
 
 		$html .="<form action='answer.php' method='post'>
-			<button type='submit' class='answer ".$class."' name='answer' value='$answer->answer'>$answer->answer</button>
+			<button type='submit' class='btn neutral ".$class."' name='answer' value='$answer->answer' $answer_state>$answer->answer</button>
 			<input type='hidden' name='count' value=".$question['count']." />
-			<input type='hidden' name='question_id' value=".$question['id']." />
+			<input type='hidden' name='is_answered' value='1' />
+			<input type='hidden' name='question_id' value=".$question_id." />
 			</form>";
 		//reset class to nil
 		//avoids appending a class to the next
 		//iteration of the loop.
 		$class = '';
 	}
-	//If id is not empty user has given an answer
-	//Set the btn state to enabled. User can requese
-	//a new question.
-	//Unset the qeustion id to genereate a new random
-	//question
-	if(!empty($id)){
-		unset( $_SESSION['question_id']);
+	//Enable the button next question
+	if($is_answered == 1 && ($count < $allowed_questions)){
 		$btn_state = 'enabled';
+		$next_question = 1;
 	}
-	
-	$html .="<div><form action='index.php'><button class='".$btn_state." answer next' ".$btn_state.">Next</button></form></div>";
-	return $html;
+
+	if($allowed_questions > $count){	
+		$html .="<div><form action='next_question.php' method='post'><button class='btn ".$btn_state."' name='next_question' value=".$next_question." {$btn_state}>Next</button></form></div>";
+	}
+	elseif($allowed_questions <= $count){
+		$html .="<div><form action='results.php'><button class='btn enabled'>View results</button></form></div>";
+	}
+	$html .= "</div>";
+	echo $html;
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-<link href="html/css/style.css" type="text/css" rel="stylesheet"/>
 
-</head>
-<body>
-
-<div class="container">
 <?php 
-//var_dump($_SESSION);
-if(!isset($_SESSION['question_id'])){
-$question_id = '';
-}else{
-$question_id = $_SESSION['question_id'];
-}
-if(!$question_id == NULL) echo $quiz = quiz($question_id);	
-if($question_id == NULL) echo $quiz = quiz();	
+require_once '../models/Loader.php';
+require_once '../functions/';
+
+include 'includes/header.php';
+quiz();	
+include 'includes/footer.php';
 ?>
 
-</div>
-</body>
-</html>

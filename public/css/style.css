@@ -1,27 +1,28 @@
-.answer {
+.neutral {
+background:gray;
+border:1px solid #5c5c5c;
+}
+
+.enabled {
+background:darkblue;
+}
+
+.btn {
+color:white;
 width:120px;
 margin:5px 0;
 text-align:center;
-background:gray;
-border:1px solid #5c5c5c;
-padding:5px;
-text-decoration:none;
-color:white;
 display:block;
-}
-.next {
-background:darkblue;
-color:white;
+text-decoration:none;
+padding:5px;
 }
 
 .wrong {
 background:red;
-color:white;
 }
 
 .correct {
 background:green;
-color:white;
 }
 
 .disabled {
