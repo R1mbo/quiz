@@ -69,13 +69,17 @@ function quiz(){
 	$session_id = session_id();
 	!isset($_SESSION['next_question']) ? $next_question = 0 : $next_question = $_SESSION['next_question'];
 	
+        //If the flag next question has the value 0 run validation
+	//on the question id to see if there is a question stored
+	//against the user session.
 	if($next_question == 0){	
 		$validate = validate_question($session_id);
 		$question_id = $validate[0];
  		$is_answered = $validate[1];
         	$exists      = $validate[2];
 	}
-
+	//User has requested a new question. Generate a random
+	//question and store it against the user session
 	if($next_question == 1){
 		$question_id = mt_rand(1,5);	
 		$db->update('sessions', array('question_id'=> $question_id, 'is_answered'=>0), array('session_id'=>$session_id));
@@ -86,7 +90,8 @@ function quiz(){
 	!isset($_SESSION['usr_answer']) ? $usr_answer = '' : $usr_answer = $_SESSION['usr_answer'];
 	!isset($_SESSION['usr_flag'])   ? $usr_flag = ''   : $usr_flag = $_SESSION['usr_flag'];
 	if(!isset($is_answered)) $is_answered = 0;	
-
+	
+	//Quiz starts generating questions and related answers here
 	$question = get_question($question_id, $count); 
 
 	//Render HTML. Question and Answer
@@ -126,7 +131,9 @@ function quiz(){
 		$btn_state = 'enabled';
 		$next_question = 1;
 	}
-
+	//Check to determine if the quiz has been completed
+	//or not. If not display button "next question".
+	//If completed display button results.
 	if($allowed_questions > $count){	
 		$html .="<div><form action='next_question.php' method='post'><button class='btn ".$btn_state."' name='next_question' value=".$next_question." {$btn_state}>Next</button></form></div>";
 	}
